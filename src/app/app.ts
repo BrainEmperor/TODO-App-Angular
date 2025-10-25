@@ -1,9 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { EnterYourTodo } from "./enter-your-todo/enter-your-todo";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, EnterYourTodo],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <tr style="height: 50px;">
+            <th style="background-color: rgb(240, 238, 238);">
+                Enter your todo
+            </th>   
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 20px;">
+                <div style="display: flex; gap: 10px;">
+                    <form>
+                        <input name="taskarea" [(ngModel)]="taskarea" id="taskarea" style=" height: 50px; width: 60%; min-width: 300px;" type="text" placeholder="What do you want to do ?">
+                    </form>
+                    <app-green-plus (clicked)="AddTask($event)"></app-green-plus> 
+                    <app-red-minus (clicked)="RemoveTask()"></app-red-minus>
+                </div>
+                           
+            </td>
+        </tr>
+        <div *ngIf="tasks.length!==0">
+            <div *ngFor="let task of tasks">
+                <tr>
+                    <td class="tasks">{{task}}</td>
+                </tr>              
+            </div>
+        </div>       
+    </tbody>
+
+</table>
